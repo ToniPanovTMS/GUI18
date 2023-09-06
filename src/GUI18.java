@@ -16,13 +16,15 @@ class GUI18 extends JFrame {
         jTextField.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                answer=jTextField.getText();
+                answer+=jTextField.getText()+"\n";
             }
         });
 
         JTextArea jTextArea= new JTextArea();
         jTextArea.setAlignmentX(Component.CENTER_ALIGNMENT);
         jTextArea.setMaximumSize(new Dimension(450,350));
+        jTextArea.setLineWrap(true);
+        jTextArea.setWrapStyleWord(true);
 
         JButton jButton = new JButton("Ответить");
         jButton.setBounds(150,40,100,50);
@@ -30,6 +32,7 @@ class GUI18 extends JFrame {
         jButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                jTextArea.setText(answer);
             }
         });
 
